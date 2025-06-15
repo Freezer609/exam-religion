@@ -4,25 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>La Peine de Mort : Argumentaire</title>
-    <!-- Chargement de Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Styles généraux pour le corps de la page et le conteneur principal */
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f0f0f0; /* Fond légèrement gris */
+            background-color: #f0f0f0;
         }
         .container {
-            max-width: 800px; /* Largeur maximale pour le contenu */
-            margin: 2rem auto; /* Centre le conteneur */
-            background-color: #ffffff; /* Fond blanc */
+            max-width: 800px;
+            margin: 2rem auto;
+            background-color: #ffffff;
             padding: 2rem;
-            border-radius: 0.75rem; /* Coins arrondis */
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Légère ombre */
-            min-height: 500px; /* Hauteur minimale pour éviter les sauts de contenu quand les onglets changent */
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            min-height: 500px;
         }
 
-        /* Styles des titres principaux */
         h1 {
             color: #1a202c;
             font-size: 2.25rem;
@@ -44,11 +41,10 @@
             margin-top: 1.5rem;
             margin-bottom: 0.75rem;
             padding-left: 0.5rem;
-            border-left: 4px solid #4299e1; /* Bordure bleue */
+            border-left: 4px solid #4299e1;
         }
 
-        /* Styles pour les paragraphes et listes */
-        p, ul, li { /* Appliquer les styles communs à tous ces éléments */
+        p, ul, li {
             line-height: 1.6;
             color: #4a5568;
         }
@@ -64,27 +60,24 @@
             margin-bottom: 0.5rem;
         }
 
-        /* Styles des blocs de questions (contenu des onglets) */
         .question-block {
             border: 1px solid #e2e8f0;
             border-radius: 0.5rem;
             padding: 1.25rem;
             background-color: #fdfdff;
-            /* Animation pour le fondu/glissement */
             transition: opacity 0.4s ease-out, transform 0.4s ease-out;
-            opacity: 0; /* Caché par défaut */
-            transform: translateY(20px); /* Légèrement décalé vers le bas */
-            display: none; /* Masqué par default, ne prend pas d'espace */
-            margin-bottom: 2rem; /* Marge pour l'espace en bas */
+            opacity: 0;
+            transform: translateY(20px);
+            display: none;
+            margin-bottom: 2rem;
         }
 
         .question-block.active {
-            display: block; /* Afficher l'onglet actif pour qu'il prenne de la place */
-            opacity: 1; /* Apparaît */
-            transform: translateY(0); /* Remonte à sa position normale */
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
         }
 
-        /* Styles de la barre de navigation (onglets) */
         .nav-tabs {
             display: flex;
             justify-content: center;
@@ -126,7 +119,6 @@
             <h2 class="text-xl font-semibold text-gray-700">Thème : « La peine de mort : Justice ou vengeance ? »</h2>
         </header>
 
-        <!-- Navigation par onglets -->
         <nav class="nav-tabs">
             <button class="nav-tab-item active-tab" onclick="openTab(event, 'question4')">Différence</button>
             <button class="nav-tab-item" onclick="openTab(event, 'question5')">Moratoire</button>
@@ -138,7 +130,6 @@
             <button class="nav-tab-item" onclick="openTab(event, 'question_histoire_armes')">Histoire USA & Armes</button>
         </nav>
 
-        <!-- Question 4 -->
         <div id="question4" class="question-block active">
             <div class="question-title">
                 4) Quelle est la différence entre une exécution et une peine de mort ? <span class="points">/2 points</span>
@@ -146,7 +137,6 @@
             <p>La <strong>peine de mort</strong> est la sentence judiciaire (condamnation à mort par un tribunal). L'<strong>exécution</strong> est l'acte de mettre physiquement en œuvre cette sentence.</p>
         </div>
 
-        <!-- Question 5 -->
         <div id="question5" class="question-block">
             <div class="question-title">
                 5) Qu'est-ce qu'un moratoire ? Explique à l'aide d'un exemple concret. <span class="points">/3 points</span>
@@ -155,7 +145,6 @@
             <p><strong>Exemple concret :</strong> Un pays met en place un moratoire sur la peine de mort, ce qui signifie qu'il n'exécutera plus personne tant que cette pause est en vigueur. Cela permet de réfléchir ou de revoir les lois.</p>
         </div>
 
-        <!-- Question 3 -->
         <div id="question3" class="question-block">
             <div class="question-title">
                 3) Aux U.S.A., la peine de mort est une véritable loterie. Explique pourquoi. <span class="points">/5 points</span>
@@ -169,7 +158,6 @@
             </ul>
         </div>
 
-        <!-- Question 1 -->
         <div id="question1" class="question-block">
             <div class="question-title">
                 1) Ex-président Barack Obama et la peine capitale. <span class="points">/12 points</span>
@@ -188,7 +176,6 @@
             </ul>
         </div>
 
-        <!-- Question 2 -->
         <div id="question2" class="question-block">
             <div class="question-title">
                 2) Angelina Jolie et l'application de la peine capitale. <span class="points">/12 points</span>
@@ -205,7 +192,6 @@
             </ul>
         </div>
 
-        <!-- Question : La protection de la société -->
         <div id="question_protection_societe" class="question-block">
             <div class="question-title">
                 La peine de mort permet la protection de la société : explique le(s) contre-arguments. <span class="points">/3 points</span>
@@ -217,83 +203,68 @@
             </ul>
         </div>
 
-        <!-- Question : USA Courants (Clivage Nord-Sud, Abolitionniste/Rétentionniste) -->
         <div id="question_usa_currents" class="question-block">
             <div class="question-title">
                 USA : Clivage Nord-Sud et Peine de mort (XX<sup>e</sup> siècle) <span class="points">/10 points</span>
             </div>
             <p>Au XX<sup>e</sup> siècle, la peine de mort aux États-Unis est marquée par un clivage Nord-Sud :</p>
             <ul>
-                <li><strong>Abolitionnistes (Nord) :</strong> États ayant aboli la peine de mort (ex: Michigan 1847, Wisconsin 1853). Liés aux mouvements démocrates et à l'abolition de l'esclavage.</li>
-                <li><strong>Rétentionnistes (Sud) :</strong> États maintenant la peine de mort (ex: Texas, Floride, Mississipi). Liés à l'économie agraire, l'héritage de l'esclavage, et un courant républicain souvent favorable. Plus d'exécutions et une population plus en faveur.</li>
+                <li><strong>Abolitionnistes (Nord) :</strong> États ayant aboli la peine de mort.</li>
+                <li><strong>Rétentionnistes (Sud) :</strong> États qui maintiennent la peine de mort.</li>
             </ul>
-            <p>Ce clivage reflète des histoires, économies et idéologies politiques différentes entre ces régions.</p>
+            <p>Ce clivage reflète des histoires, des économies et des idéologies politiques différentes entre ces régions.</p>
         </div>
 
-        <!-- Nouvelle Question : La peine de mort fait partie intégrante de l'histoire des États-Unis et de son usage des armes à feu. -->
         <div id="question_histoire_armes" class="question-block">
             <div class="question-title">
                 Peine de mort, histoire des USA et armes à feu. <span class="points">/10 points</span>
             </div>
-            <p>La peine de mort est profondément liée à l'histoire des États-Unis et à l'usage des armes à feu :</p>
+            <p>La peine de mort est liée à l'histoire des États-Unis et à l'usage des armes à feu :</p>
             <ul>
                 <li><strong>Application :</strong> Depuis 1608 aux États-Unis.</li>
-                <li><strong>2<sup>e</sup> Amendement :</strong> Il garantit le droit de porter des armes. Son lien avec la peine de mort est historique, notamment avec la conquête de l'Ouest. Ce droit légal contribue à des taux élevés d'homicides par balle et, indirectement, à des bavures policières.</li>
-                <li><strong>Clivage des partis :</strong>
-                    <ul>
-                        <li>Les <strong>démocrates</strong> (ex: Joe Biden) sont moins opposés à la peine de mort, mais moins favorables au port d'armes.</li>
-                        <li>Les <strong>républicains</strong> (ex: Donald Trump) défendent le 2<sup>e</sup> Amendement et sont généralement plus pour la peine de mort.</li>
-                    </ul>
-                </li>
+                <li><strong>2<sup>e</sup> Amendement :</strong> Droit de porter des armes. Son lien avec la peine de mort est historique, contribuant à des taux élevés d'homicides par balle et des bavures policières.</li>
+                <li><strong>Clivage des partis :</strong> Démocrates (moins opposés à peine de mort, moins favorables aux armes) vs. Républicains (défendent 2<sup>e</sup> Amendement, plus pour peine de mort).</li>
             </ul>
         </div>
 
     </div>
 
     <script>
-        // Fonction pour gérer l'ouverture des onglets
         function openTab(event, tabId) {
-            // Désactiver tous les onglets de navigation
             const navTabItems = document.querySelectorAll('.nav-tab-item');
             navTabItems.forEach(item => {
                 item.classList.remove('active-tab');
             });
 
-            // Gérer l'animation de sortie du bloc actif actuel
             const currentActiveBlock = document.querySelector('.question-block.active');
             if (currentActiveBlock) {
                 currentActiveBlock.style.opacity = '0';
                 currentActiveBlock.style.transform = 'translateY(20px)';
-                // Utiliser setTimeout pour s'assurer que l'animation de sortie est visible
                 setTimeout(() => {
-                    currentActiveBlock.classList.remove('active'); // Retire la classe active après l'animation
-                    currentActiveBlock.style.display = 'none'; // Cache le bloc après l'animation
-                    activateNewTab(tabId); // Lance l'animation pour le nouveau bloc
-                }, 400); // Durée de la transition CSS (0.4s)
+                    currentActiveBlock.classList.remove('active');
+                    currentActiveBlock.style.display = 'none';
+                    activateNewTab(tabId);
+                }, 400);
             } else {
-                activateNewTab(tabId); // S'il n'y a pas de bloc actif, active directement le nouveau
+                activateNewTab(tabId);
             }
 
-            // Activer visuellement l'onglet de navigation correspondant
             event.currentTarget.classList.add('active-tab');
         }
 
-        // Fonction auxiliaire pour activer et animer le nouveau tab
         function activateNewTab(tabId) {
             const nextActiveBlock = document.getElementById(tabId);
             if (nextActiveBlock) {
-                nextActiveBlock.style.display = 'block'; // Rendre visible avant l'animation
-                // Forcer le reflow/repaint pour s'assurer que display:block est appliqué avant la transition
-                void nextActiveBlock.offsetWidth; // Déclenche un reflow
+                nextActiveBlock.style.display = 'block';
+                void nextActiveBlock.offsetWidth;
                 requestAnimationFrame(() => {
                     nextActiveBlock.style.opacity = '1';
                     nextActiveBlock.style.transform = 'translateY(0)';
-                    nextActiveBlock.classList.add('active'); // Ajoute la classe active au nouveau bloc
+                    nextActiveBlock.classList.add('active');
                 });
             }
         }
 
-        // Active le premier onglet par défaut au chargement de la page
         document.addEventListener('DOMContentLoaded', () => {
             const firstTabButton = document.querySelector('.nav-tab-item');
             const firstTabContent = document.querySelector('.question-block');
@@ -302,10 +273,9 @@
                 firstTabButton.classList.add('active-tab');
             }
             if (firstTabContent) {
-                // Initialiser l'état pour que l'animation d'entrée fonctionne au chargement
                 firstTabContent.style.opacity = '0';
                 firstTabContent.style.transform = 'translateY(20px)';
-                firstTabContent.style.display = 'block'; // Rendre visible pour l'animation
+                firstTabContent.style.display = 'block';
 
                 requestAnimationFrame(() => {
                     firstTabContent.style.opacity = '1';
