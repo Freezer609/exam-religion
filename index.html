@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Peine de Mort : Argumentaire</title>
+    <!-- Chargement de Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Styles généraux pour le corps de la page et le conteneur principal */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f0f0; /* Fond légèrement gris */
+        }
+        .container {
+            max-width: 800px; /* Largeur maximale pour le contenu */
+            margin: 2rem auto; /* Centre le conteneur */
+            background-color: #ffffff; /* Fond blanc */
+            padding: 2rem;
+            border-radius: 0.75rem; /* Coins arrondis */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Légère ombre */
+            position: relative; /* Pour le positionnement des blocs si besoin, mais géré différemment ici */
+            min-height: 500px; /* Hauteur minimale pour éviter les sauts de contenu quand les onglets changent */
+        }
+
+        /* Styles des titres principaux */
+        h1 {
+            color: #1a202c;
+            font-size: 2.25rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+        h2 {
+            color: #2d3748;
+            font-size: 1.5rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        h3 {
+            color: #4a5568;
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            padding-left: 0.5rem;
+            border-left: 4px solid #4299e1; /* Bordure bleue */
+        }
+
+        /* Styles pour les paragraphes et listes */
+        p, ul, li { /* Appliquer les styles communs à tous ces éléments */
+            line-height: 1.6;
+            color: #4a5568;
+        }
+        p {
+            margin-bottom: 1rem;
+        }
+        ul {
+            list-style-type: disc;
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Styles des blocs de questions (contenu des onglets) */
+        .question-block {
+            border: 1px solid #e2e8f0;
+            border-radius: 0.5rem;
+            padding: 1.25rem;
+            background-color: #fdfdff;
+            /* Animation pour le fondu/glissement */
+            transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+            opacity: 0; /* Caché par défaut */
+            transform: translateY(20px); /* Légèrement décalé vers le bas */
+            display: none; /* Masqué par défaut, ne prend pas d'espace */
+            margin-bottom: 2rem; /* Marge pour l'espace en bas */
+        }
+
+        .question-block.active {
+            display: block; /* Afficher l'onglet actif pour qu'il prenne de la place */
+            opacity: 1; /* Apparaît */
+            transform: translateY(0); /* Remonte à sa position normale */
+        }
+
+        /* Styles de la barre de navigation (onglets) */
+        .nav-tabs {
+            display: flex;
+            justify-content: center;
+            background-color: #2a6db0;
+            border-radius: 0.5rem;
+            margin-bottom: 2rem;
+            padding: 0.5rem 0;
+            flex-wrap: wrap;
+        }
+        .nav-tab-item {
+            padding: 0.75rem 1.25rem;
+            cursor: pointer;
+            color: white;
+            font-weight: 500;
+            border-radius: 0.375rem;
+            transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+            margin: 0.25rem;
+            text-align: center;
+            white-space: nowrap;
+        }
+        .nav-tab-item:hover {
+            background-color: #3b82f6;
+        }
+        .nav-tab-item.active-tab {
+            background-color: #ffffff;
+            color: #2a6db0;
+            font-weight: 700;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header class="text-center mb-8">
+            <div class="bg-gray-200 py-3 px-6 rounded-md mb-4 shadow-sm">
+                <h1 class="text-3xl font-extrabold text-gray-800">LA PEINE DE MORT : ARGUMENTAIRE</h1>
+            </div>
+            <h2 class="text-xl font-semibold text-gray-700">Thème : « La peine de mort : Justice ou vengeance ? »</h2>
+        </header>
+
+        <!-- Navigation par onglets -->
+        <nav class="nav-tabs">
+            <button class="nav-tab-item active-tab" onclick="openTab(event, 'question4')">Différence</button>
+            <button class="nav-tab-item" onclick="openTab(event, 'question5')">Moratoire</button>
+            <button class="nav-tab-item" onclick="openTab(event, 'question3')">Loterie USA</button>
+            <button class="nav-tab-item" onclick="openTab(event, 'question1')">Obama</button>
+            <button class="nav-tab-item" onclick="openTab(event, 'question2')">Angelina Jolie</button>
+        </nav>
+
+        <!-- Question 4 -->
+        <div id="question4" class="question-block active">
+            <div class="question-title">
+                4) Quelle est la différence entre une exécution et une peine de mort ? <span class="points">/2 points</span>
+            </div>
+            <p>La <strong>peine de mort</strong> est la sentence judiciaire (condamnation à mort par un tribunal). L'<strong>exécution</strong> est l'acte de mettre physiquement en œuvre cette sentence.</p>
+        </div>
+
+        <!-- Question 5 -->
+        <div id="question5" class="question-block">
+            <div class="question-title">
+                5) Qu'est-ce qu'un moratoire ? Explique à l'aide d'un exemple concret. <span class="points">/3 points</span>
+            </div>
+            <p>Un <strong>moratoire</strong> est une suspension temporaire officielle d'une action. Pour la peine de mort, c'est l'arrêt des exécutions pendant un temps, sans abolition définitive.</p>
+            <p><strong>Exemple concret :</strong> Un pays met en place un moratoire sur la peine de mort, ce qui signifie qu'il n'exécutera plus personne tant que cette pause est en vigueur. Cela permet de réfléchir ou de revoir les lois.</p>
+        </div>
+
+        <!-- Question 3 -->
+        <div id="question3" class="question-block">
+            <div class="question-title">
+                3) Aux U.S.A., la peine de mort est une véritable loterie. Explique pourquoi. <span class="points">/5 points</span>
+            </div>
+            <p>L'application de la peine de mort aux États-Unis est arbitraire, influencée par des facteurs aléatoires et non par la seule justice :</p>
+            <ul>
+                <li><strong>Qualité des avocats :</strong> Moins de moyens = plus de risques de condamnation.</li>
+                <li><strong>Juges et jurys :</strong> La sentence dépend de leur sévérité.</li>
+                <li><strong>Facteurs sociaux/politiques :</strong> Race, classe sociale, opinions politiques peuvent influencer.</li>
+                <li><strong>Erreur humaine :</strong> L'exécution est irréversible en cas d'erreur judiciaire.</li>
+            </ul>
+        </div>
+
+        <!-- Question 1 -->
+        <div id="question1" class="question-block">
+            <div class="question-title">
+                1) Ex-président Barack Obama et la peine capitale. <span class="points">/12 points</span>
+            </div>
+            <h3>Argument associé :</h3>
+            <p>La position d'Obama (peine de mort pour crimes extrêmes limités) se rattache à l'argument de la <strong>dissuasion</strong>. La menace de l'exécution est censée empêcher les crimes horribles.</p>
+            <h3>Développement de l'argument :</h3>
+            <p>Les partisans de la dissuasion croient que la peine de mort a un "fort effet dissuasif", faisant peur aux criminels et les empêchant de passer à l'acte par crainte de la mort.</p>
+            <h3>Contre-arguments :</h3>
+            <ul>
+                <li><strong>Pas de preuve :</strong> Aucune preuve claire que la peine de mort diminue la criminalité (ex: Europe, Canada).</li>
+                <li><strong>Statistiques :</strong> Certains États avec peine de mort ont plus d'homicides.</li>
+                <li><strong>Avis d'experts :</strong> La plupart des experts ne la jugent pas efficace pour dissuader.</li>
+                <li><strong>Nature des criminels :</strong> Souvent, les criminels ne réfléchissent pas aux conséquences.</li>
+                <li><strong>Prison à vie :</strong> La prison à vie suffit à empêcher la récidive.</li>
+            </ul>
+        </div>
+
+        <!-- Question 2 -->
+        <div id="question2" class="question-block">
+            <div class="question-title">
+                2) Angelina Jolie et l'application de la peine capitale. <span class="points">/12 points</span>
+            </div>
+            <h3>Argument associé :</h3>
+            <p>La position d'Angelina Jolie (pour les viols d'enfants) est liée à la <strong>protection de la société</strong>. L'exécution des criminels empêche toute récidive, protégeant ainsi les victimes vulnérables.</p>
+            <h3>Développement de l'argument :</h3>
+            <p>L'argument de protection vise à défendre la société contre les criminels dangereux. En exécutant, on assure que le coupable ne nuira plus, ce qui est perçu comme le moyen le plus sûr d'éliminer la menace.</p>
+            <h3>Contre-arguments :</h3>
+            <ul>
+                <li><strong>Autres protections :</strong> La société peut se protéger autrement, sans exécution (ex: amélioration des méthodes de lutte contre la criminalité).</li>
+                <li><strong>Prison à vie :</strong> L'incarcération à vie empêche aussi la récidive.</li>
+                <li><strong>Risque d'erreur :</strong> L'exécution est irréversible. Une erreur judiciaire est inacceptable car un innocent ne peut pas être rétabli.</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <script>
+        // Fonction pour gérer l'ouverture des onglets
+        function openTab(event, tabId) {
+            // Désactiver tous les onglets de navigation
+            const navTabItems = document.querySelectorAll('.nav-tab-item');
+            navTabItems.forEach(item => {
+                item.classList.remove('active-tab');
+            });
+
+            // Gérer l'animation de sortie du bloc actif actuel
+            const currentActiveBlock = document.querySelector('.question-block.active');
+            if (currentActiveBlock) {
+                currentActiveBlock.style.opacity = '0';
+                currentActiveBlock.style.transform = 'translateY(20px)';
+                // Attendre la fin de l'animation de sortie avant de cacher complètement
+                currentActiveBlock.addEventListener('transitionend', function handler() {
+                    currentActiveBlock.classList.remove('active'); // Retire la classe active après l'animation
+                    currentActiveBlock.style.display = 'none'; // Cache le bloc après l'animation
+                    currentActiveBlock.removeEventListener('transitionend', handler);
+
+                    // Lance l'animation pour le nouveau bloc APRÈS que l'ancien ait fini
+                    activateNewTab(tabId);
+                }, { once: true });
+            } else {
+                // S'il n'y a pas de bloc actif (au chargement initial par exemple)
+                activateNewTab(tabId);
+            }
+
+            // Activer visuellement l'onglet de navigation correspondant
+            event.currentTarget.classList.add('active-tab');
+        }
+
+        // Fonction auxiliaire pour activer et animer le nouveau tab
+        function activateNewTab(tabId) {
+            const nextActiveBlock = document.getElementById(tabId);
+            if (nextActiveBlock) {
+                nextActiveBlock.style.display = 'block'; // Rendre visible avant l'animation
+                // Forcer le reflow/repaint pour s'assurer que display:block est appliqué avant la transition
+                void nextActiveBlock.offsetWidth;
+                requestAnimationFrame(() => {
+                    nextActiveBlock.style.opacity = '1';
+                    nextActiveBlock.style.transform = 'translateY(0)';
+                    nextActiveBlock.classList.add('active'); // Ajoute la classe active au nouveau bloc
+                });
+            }
+        }
+
+        // Active le premier onglet par défaut au chargement de la page
+        document.addEventListener('DOMContentLoaded', () => {
+            const firstTabButton = document.querySelector('.nav-tab-item');
+            const firstTabContent = document.querySelector('.question-block');
+
+            if (firstTabButton) {
+                firstTabButton.classList.add('active-tab');
+            }
+            if (firstTabContent) {
+                // Pour la première animation, s'assurer que l'état initial est bien défini
+                firstTabContent.style.opacity = '0';
+                firstTabContent.style.transform = 'translateY(20px)';
+                firstTabContent.style.display = 'block'; // Rendre visible avant l'animation
+
+                // Trigger l'animation après un léger délai pour s'assurer que le CSS est appliqué
+                requestAnimationFrame(() => {
+                    firstTabContent.style.opacity = '1';
+                    firstTabContent.style.transform = 'translateY(0)';
+                    firstTabContent.classList.add('active');
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>
