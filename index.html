@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>La Peine de Mort : Argumentaire</title>
+    <title>La Peine de Mort : Examen juin 2025</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {
@@ -18,6 +18,8 @@
             border-radius: 0.75rem;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             min-height: 500px;
+            display: flex; /* Utilisation de flexbox pour le footer */
+            flex-direction: column;
         }
 
         h1 {
@@ -70,6 +72,7 @@
             transform: translateY(20px);
             display: none;
             margin-bottom: 2rem;
+            flex-grow: 1; /* Permet au contenu de prendre l'espace disponible */
         }
 
         .question-block.active {
@@ -107,6 +110,15 @@
             font-weight: 700;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
+
+        .footer-note {
+            margin-top: auto; /* Pousse le footer vers le bas */
+            padding-top: 1rem;
+            border-top: 1px solid #e2e8f0;
+            text-align: center;
+            font-size: 0.875rem;
+            color: #6b7280;
+        }
     </style>
 </head>
 <body>
@@ -114,9 +126,9 @@
     <div class="container">
         <header class="text-center mb-8">
             <div class="bg-gray-200 py-3 px-6 rounded-md mb-4 shadow-sm">
-                <h1 class="text-3xl font-extrabold text-gray-800">LA PEINE DE MORT : ARGUMENTAIRE</h1>
+                <h1 class="text-3xl font-extrabold text-gray-800">LA PEINE DE MORT</h1>
             </div>
-            <h2 class="text-xl font-semibold text-gray-700">Thème : « La peine de mort : Justice ou vengeance ? »</h2>
+            <h2 class="text-xl font-semibold text-gray-700">Examen juin 2025</h2>
         </header>
 
         <nav class="nav-tabs">
@@ -225,6 +237,10 @@
                 <li><strong>2<sup>e</sup> Amendement :</strong> Droit de porter des armes. Son lien avec la peine de mort est historique, contribuant à des taux élevés d'homicides par balle et des bavures policières.</li>
                 <li><strong>Clivage des partis :</strong> Démocrates (moins opposés à peine de mort, moins favorables aux armes) vs. Républicains (défendent 2<sup>e</sup> Amendement, plus pour peine de mort).</li>
             </ul>
+        </div>
+
+        <div class="footer-note">
+            Ce site a été conçu pour l'examen de juin 2025. Tous droits de suppression reviennent à l'hébergeur du code.
         </div>
 
     </div>
