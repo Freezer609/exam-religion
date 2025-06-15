@@ -19,7 +19,6 @@
             padding: 2rem;
             border-radius: 0.75rem; /* Coins arrondis */
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Légère ombre */
-            position: relative; /* Pour le positionnement des blocs si besoin, mais géré différemment ici */
             min-height: 500px; /* Hauteur minimale pour éviter les sauts de contenu quand les onglets changent */
         }
 
@@ -75,7 +74,7 @@
             transition: opacity 0.4s ease-out, transform 0.4s ease-out;
             opacity: 0; /* Caché par défaut */
             transform: translateY(20px); /* Légèrement décalé vers le bas */
-            display: none; /* Masqué par défaut, ne prend pas d'espace */
+            display: none; /* Masqué par default, ne prend pas d'espace */
             margin-bottom: 2rem; /* Marge pour l'espace en bas */
         }
 
@@ -134,6 +133,9 @@
             <button class="nav-tab-item" onclick="openTab(event, 'question3')">Loterie USA</button>
             <button class="nav-tab-item" onclick="openTab(event, 'question1')">Obama</button>
             <button class="nav-tab-item" onclick="openTab(event, 'question2')">Angelina Jolie</button>
+            <button class="nav-tab-item" onclick="openTab(event, 'question_protection_societe')">Protection Société</button>
+            <button class="nav-tab-item" onclick="openTab(event, 'question_usa_currents')">USA Courants</button>
+            <button class="nav-tab-item" onclick="openTab(event, 'question_histoire_armes')">Histoire USA & Armes</button>
         </nav>
 
         <!-- Question 4 -->
@@ -203,6 +205,49 @@
             </ul>
         </div>
 
+        <!-- Question : La protection de la société -->
+        <div id="question_protection_societe" class="question-block">
+            <div class="question-title">
+                La peine de mort permet la protection de la société : explique le(s) contre-arguments. <span class="points">/3 points</span>
+            </div>
+            <p>Les contre-arguments à l'idée que la peine de mort protège la société sont :</p>
+            <ul>
+                <li>La protection de la société passe par d'autres mesures. La peine de mort peut détourner l'attention des autorités et de l'opinion publique des méthodes qui devraient être réellement améliorées pour lutter contre la criminalité.</li>
+                <li>Il est possible de mettre les criminels dangereux à l'écart de la société sans les exécuter. La prison à perpétuité et des conditions de détention adaptées permettent aussi d'empêcher la récidive, sans être irréversibles.</li>
+            </ul>
+        </div>
+
+        <!-- Question : USA Courants (Clivage Nord-Sud, Abolitionniste/Rétentionniste) -->
+        <div id="question_usa_currents" class="question-block">
+            <div class="question-title">
+                USA : Clivage Nord-Sud et Peine de mort (XX<sup>e</sup> siècle) <span class="points">/10 points</span>
+            </div>
+            <p>Au XX<sup>e</sup> siècle, la peine de mort aux États-Unis est marquée par un clivage Nord-Sud :</p>
+            <ul>
+                <li><strong>Abolitionnistes (Nord) :</strong> États ayant aboli la peine de mort (ex: Michigan 1847, Wisconsin 1853). Liés aux mouvements démocrates et à l'abolition de l'esclavage.</li>
+                <li><strong>Rétentionnistes (Sud) :</strong> États maintenant la peine de mort (ex: Texas, Floride, Mississipi). Liés à l'économie agraire, l'héritage de l'esclavage, et un courant républicain souvent favorable. Plus d'exécutions et une population plus en faveur.</li>
+            </ul>
+            <p>Ce clivage reflète des histoires, économies et idéologies politiques différentes entre ces régions.</p>
+        </div>
+
+        <!-- Nouvelle Question : La peine de mort fait partie intégrante de l'histoire des États-Unis et de son usage des armes à feu. -->
+        <div id="question_histoire_armes" class="question-block">
+            <div class="question-title">
+                Peine de mort, histoire des USA et armes à feu. <span class="points">/10 points</span>
+            </div>
+            <p>La peine de mort est profondément liée à l'histoire des États-Unis et à l'usage des armes à feu :</p>
+            <ul>
+                <li><strong>Application :</strong> Depuis 1608 aux États-Unis.</li>
+                <li><strong>2<sup>e</sup> Amendement :</strong> Il garantit le droit de porter des armes. Son lien avec la peine de mort est historique, notamment avec la conquête de l'Ouest. Ce droit légal contribue à des taux élevés d'homicides par balle et, indirectement, à des bavures policières.</li>
+                <li><strong>Clivage des partis :</strong>
+                    <ul>
+                        <li>Les <strong>démocrates</strong> (ex: Joe Biden) sont moins opposés à la peine de mort, mais moins favorables au port d'armes.</li>
+                        <li>Les <strong>républicains</strong> (ex: Donald Trump) défendent le 2<sup>e</sup> Amendement et sont généralement plus pour la peine de mort.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
     </div>
 
     <script>
@@ -219,18 +264,14 @@
             if (currentActiveBlock) {
                 currentActiveBlock.style.opacity = '0';
                 currentActiveBlock.style.transform = 'translateY(20px)';
-                // Attendre la fin de l'animation de sortie avant de cacher complètement
-                currentActiveBlock.addEventListener('transitionend', function handler() {
+                // Utiliser setTimeout pour s'assurer que l'animation de sortie est visible
+                setTimeout(() => {
                     currentActiveBlock.classList.remove('active'); // Retire la classe active après l'animation
                     currentActiveBlock.style.display = 'none'; // Cache le bloc après l'animation
-                    currentActiveBlock.removeEventListener('transitionend', handler);
-
-                    // Lance l'animation pour le nouveau bloc APRÈS que l'ancien ait fini
-                    activateNewTab(tabId);
-                }, { once: true });
+                    activateNewTab(tabId); // Lance l'animation pour le nouveau bloc
+                }, 400); // Durée de la transition CSS (0.4s)
             } else {
-                // S'il n'y a pas de bloc actif (au chargement initial par exemple)
-                activateNewTab(tabId);
+                activateNewTab(tabId); // S'il n'y a pas de bloc actif, active directement le nouveau
             }
 
             // Activer visuellement l'onglet de navigation correspondant
@@ -243,7 +284,7 @@
             if (nextActiveBlock) {
                 nextActiveBlock.style.display = 'block'; // Rendre visible avant l'animation
                 // Forcer le reflow/repaint pour s'assurer que display:block est appliqué avant la transition
-                void nextActiveBlock.offsetWidth;
+                void nextActiveBlock.offsetWidth; // Déclenche un reflow
                 requestAnimationFrame(() => {
                     nextActiveBlock.style.opacity = '1';
                     nextActiveBlock.style.transform = 'translateY(0)';
@@ -261,12 +302,11 @@
                 firstTabButton.classList.add('active-tab');
             }
             if (firstTabContent) {
-                // Pour la première animation, s'assurer que l'état initial est bien défini
+                // Initialiser l'état pour que l'animation d'entrée fonctionne au chargement
                 firstTabContent.style.opacity = '0';
                 firstTabContent.style.transform = 'translateY(20px)';
-                firstTabContent.style.display = 'block'; // Rendre visible avant l'animation
+                firstTabContent.style.display = 'block'; // Rendre visible pour l'animation
 
-                // Trigger l'animation après un léger délai pour s'assurer que le CSS est appliqué
                 requestAnimationFrame(() => {
                     firstTabContent.style.opacity = '1';
                     firstTabContent.style.transform = 'translateY(0)';
