@@ -119,6 +119,40 @@
             font-size: 0.875rem;
             color: #6b7280;
         }
+
+        /* Style pour le bouton des propos d'Obama */
+        .quote-button {
+            background-color: #4299e1; /* Bleu */
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            transition: background-color 0.3s ease;
+        }
+        .quote-button:hover {
+            background-color: #3182ce; /* Bleu plus foncé au survol */
+        }
+        .obama-quotes {
+            background-color: #e0f2f7; /* Fond clair pour les citations */
+            border-left: 4px solid #4299e1;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 0.375rem;
+            font-style: italic;
+            color: #2c5282;
+            display: none; /* Caché par défaut */
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+        }
+        .obama-quotes.show {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 </head>
 <body>
@@ -178,6 +212,10 @@
                     <li><strong>Justifie ta réponse en développant cet argument.</strong></li>
                     <li><strong>Ensuite, explique les contre-arguments avancés pour le déconstruire.</strong></li>
                 </ul> <span class="points">/12 points</span>
+            </div>
+            <button class="quote-button" onclick="toggleObamaQuotes()">Voir les propos d'Obama</button>
+            <div id="obamaQuotes" class="obama-quotes">
+                <p>"Je n'ai cessé de le dire, la peine de mort devrait être autorisée dans un nombre très limité de circonstances, pour les crimes les plus extrêmes... À mon avis, le viol d'un petit enfant âgé de 6 ou 8 ans est un crime affreux, et si un État décide que dans des circonstances réduites, limitées, et bien définies, la peine de mort est au moins potentiellement applicable, ceci ne nuit pas à notre Constitution".</p>
             </div>
             <h3>Argument associé :</h3>
             <p>La position d'Obama (peine de mort pour crimes extrêmes limités) se rattache à l'argument de la <strong>dissuasion</strong>. La menace de l'exécution est censée empêcher les crimes horribles.</p>
@@ -288,6 +326,16 @@
                     nextActiveBlock.style.transform = 'translateY(0)';
                     nextActiveBlock.classList.add('active');
                 });
+            }
+        }
+
+        // Fonction pour afficher/masquer les propos d'Obama
+        function toggleObamaQuotes() {
+            const quotesDiv = document.getElementById('obamaQuotes');
+            if (quotesDiv.classList.contains('show')) {
+                quotesDiv.classList.remove('show');
+            } else {
+                quotesDiv.classList.add('show');
             }
         }
 
